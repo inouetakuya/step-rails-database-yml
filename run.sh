@@ -153,7 +153,7 @@ generate_mysql_docker() {
   tee "$location" << EOF
 test:
     adapter: mysql2
-    encoding: utf8
+    encoding: <%= ENV['MYSQL_ENV_MYSQL_ENCODING'] || 'utf8' %>
     database: <%= ENV['MYSQL_ENV_MYSQL_DATABASE'] %><%= ENV['TEST_ENV_NUMBER'] %>
     username: <%= ENV['MYSQL_ENV_MYSQL_USER'] %>
     password: <%= ENV['MYSQL_ENV_MYSQL_PASSWORD'] %>
@@ -171,7 +171,7 @@ generate_mysql_legacy() {
   tee "$location" << EOF
 test:
     adapter: mysql2
-    encoding: utf8
+    encoding: <%= ENV['WERCKER_MYSQL_ENCODING'] || 'utf8' %>
     database: <%= ENV['WERCKER_MYSQL_DATABASE'] %><%= ENV['TEST_ENV_NUMBER'] %>
     username: <%= ENV['WERCKER_MYSQL_USERNAME'] %>
     password: <%= ENV['WERCKER_MYSQL_PASSWORD'] %>
