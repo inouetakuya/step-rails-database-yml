@@ -154,6 +154,7 @@ generate_mysql_docker() {
 test:
     adapter: mysql2
     encoding: <%= ENV['MYSQL_ENV_MYSQL_ENCODING'] || 'utf8' %>
+    charset: <%= ENV['MYSQL_ENV_MYSQL_CHARSET'] || 'utf8' %>
     collation: <%= ENV['MYSQL_ENV_MYSQL_COLLATION'] || 'utf8_general_ci' %>
     database: <%= ENV['MYSQL_ENV_MYSQL_DATABASE'] %><%= ENV['TEST_ENV_NUMBER'] %>
     username: <%= ENV['MYSQL_ENV_MYSQL_USER'] %>
@@ -173,6 +174,7 @@ generate_mysql_legacy() {
 test:
     adapter: mysql2
     encoding: <%= ENV['WERCKER_MYSQL_ENCODING'] || 'utf8' %>
+    charset: <%= ENV['WERCKER_MYSQL_CHARSET'] || 'utf8' %>
     collation: <%= ENV['WERCKER_MYSQL_COLLATION'] || 'utf8_general_ci' %>
     database: <%= ENV['WERCKER_MYSQL_DATABASE'] %><%= ENV['TEST_ENV_NUMBER'] %>
     username: <%= ENV['WERCKER_MYSQL_USERNAME'] %>
