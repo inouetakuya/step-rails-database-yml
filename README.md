@@ -18,6 +18,10 @@ the specified service; otherwise, it will infer the service from the
 environment.
 - `postgresql-min-message` (optinal, default: `warning`): Set the min_messages
 parameter in the postgresql template.
+- `mysql-encoding` (optinal, default: `utf8`): Set encoding
+parameter in mysql template.
+- `mysql-charset` (optinal, default: `utf8`): Set charset
+parameter in mysql template.
 - `mysql-collation` (optinal, default: `utf8_general_ci`): Set collation
 parameter in mysql template.
 
@@ -67,6 +71,11 @@ test:
 ```
 
 # Changelog
+
+## 1.3.0
+
+- Add `mysql-encoding` parameter
+- Add `mysql-charset` parameter
 
 ## 1.2.0
 
